@@ -1,0 +1,31 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* exo-regular - latin */
+@font-face {
+  font-family: 'Exo';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../public/fonts/exo-v20-latin-regular.woff');
+   
+}
+/* exo-600 - latin */
+@font-face {
+  font-family: 'Exo';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../public/fonts/exo-v20-latin-600.woff');
+  
+}
+/* exo-800 - latin */
+@font-face {
+  font-family: 'Exo';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../public/fonts/exo-v20-latin-800.woff');
+}
+
+
