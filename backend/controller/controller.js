@@ -1,5 +1,6 @@
 import db from '../mongooseDB/db.js';
 import User from '../mongooseschema/UserSchema.js';
+import mongoose from "mongoose";
 
 
 export const getAllUser = async(req, res) => {
@@ -16,36 +17,75 @@ export const getSingleUser = async(req, res) => {
 
 
 export const createUser = (req, res) => {
-  const {firstname, lastname, age} = req.body;
+  const {name, email, password} = req.body;
   User
-    .create({firstname: firstname, lastname: lastname, age: age})
+    .create({name: name, email: email, password: password})
     .then(newUser => res.status(200).json(newUser))
     .catch(err => res.status(200).json(err.message))
+
 }
 
+
+
 export const deleteUser = async (req, res) => {
-
   const {id} = req.params;
-
   try{
-    const deletedUser = User.findOneAndDelete({_id: id});
-    res.status(200).json({msg: `user mit ID ${id} ist gelöscht`})
+    const deletedUser = await User.findOneAndDelete({_id: id});
+    res.status(200).json({msg: `user mit ID ${id} ist geloescht`})
   } catch(err){
     console.log(err)
   }
-
-  res.status(200).json({msg: "deleted user"})
 }
 
 export const updateUser = async (req, res) => {
-  const {firstname, lastname, age} = req.body;
+  const {name, email, password} = req.body;
   const {id} = req.params;
 
   try{
-    const updatedUser = await User.findOneAndUpdate({_id: id}, {firstname: firstname, lastname: lastname, age: age})
+    const updatedUser = await User.findOneAndUpdate({_id: id}, {name: name, email: email, password: password})
     console.log(updateUser);
     res.status(200).send(updateUser)
   } catch(err) {
     console.log(err)
   }
+}
+
+
+export const loginUser =  (req, res) => {
+  const { email, password } = req.body
+
+  // console.log(`email: ${email} und password: ${password}`)
+  User.findOne({ email: email }, async(err, user) =>  {
+    if (err) {
+      console.log(err)
+    } else {
+      if (user) {
+        if (user.password === password) {
+          console.log("user ist in data base")
+          const updatedUser = await User.findOneAndUpdate({ _id: user.id }, { logged: true })
+          console.log("updatedUser", updatedUser)
+          res.status(200).json({ msg: "user logged in" });
+        } else {
+          console.log("passwort ist falsch")
+          res.status(200).json({ msg: "passwort ist falsch" });
+        }
+      }
+      else {
+      console.log("username ist falsch")
+      res.status(200).json({ msg: "username ist falsch" });
+      }
+    }
+    
+  //  console.log(user)
+ } )
+
+
+
+}
+
+export const registerUser = (req,res)=>{
+
+
+  res.status(200).json({msg : "user signed up"});
+
 }
