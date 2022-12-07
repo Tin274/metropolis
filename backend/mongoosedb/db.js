@@ -8,7 +8,7 @@ const MONGO_DB_HOST = "mongodb+srv://ChristinSchade:admin1234@cluster0.urdpr9b.m
 try{
   const mongoDB = MONGO_DB_HOST
   const client = await mongoose.connect(mongoDB);
-  console.log("client " , client)
+  // console.log("client " , client)
 
 
 

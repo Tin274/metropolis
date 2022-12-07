@@ -9,22 +9,36 @@ export const getAllUser = async(req, res) => {
 }
 
 
+export const registerUser = (req,res)=>{
+  const { name, email, password } = req.body;
+  User.findOne({ email: email }, async (err, user) => {
+    if (err) {
+      console.log(err)
+    } else {
+       if (!user) {
+      User
+    .create({name: name, email: email, password: password})
+    .then(newUser => res.status(200).json(newUser))
+    .catch(err => res.status(200).json(err.message))
+
+    }
+    else {
+      res.status(404).json({msg: "email ist schon verwendet"})
+    }
+    }
+
+   
+   })
+  // res.status(200).json({msg : "user signed up"});
+}
+
+
+
 export const getSingleUser = async(req, res) => {
   const {id} = req.params;
   const selectedUser = await User.findById(id);
   res.status(200).json({selectedUser})
 }
-
-
-export const createUser = (req, res) => {
-  const {name, email, password} = req.body;
-  User
-    .create({name: name, email: email, password: password})
-    .then(newUser => res.status(200).json(newUser))
-    .catch(err => res.status(200).json(err.message))
-
-}
-
 
 
 export const deleteUser = async (req, res) => {
@@ -78,14 +92,4 @@ export const loginUser =  (req, res) => {
     
   //  console.log(user)
  } )
-
-
-
-}
-
-export const registerUser = (req,res)=>{
-
-
-  res.status(200).json({msg : "user signed up"});
-
 }
