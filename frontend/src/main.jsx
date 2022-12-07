@@ -1,19 +1,15 @@
-import React from 'react'
+import React, { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
-/* import { checkUserLoggedStatus } from '../controller/localStorageController'
- */import App from './App'
+import { BrowserRouter } from "react-router-dom";
+
+import App from './App'
 import './index.css'
 
-/* const userStatus = checkUserLoggedStatus();
- *//* const LoggedStatusContext = createContext(userStatus); */
-
-
-
 ReactDOM.createRoot(document.getElementById('root')).render(
-
   <React.StrictMode>
-    {/* <LoggedStatusContext.Provider value={userStatus} > */}
+    <BrowserRouter>
       <App />
-   {/*  </LoggedStatusContext.Provider> */}
+     </BrowserRouter>
   </React.StrictMode>
-)
+  )
+
