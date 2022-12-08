@@ -1,0 +1,64 @@
+.card-container {
+  width: 350px;
+  height: 350px;
+  background-color: var(--card);
+  border: solid 2px var(--turkis);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.headline {
+  margin: 48px 0 48px 0;
+}
+
+.city-img {
+  width: 310px;
+  height: 280px;
+  object-fit: cover;
+  margin: 15px auto;
+  border-radius: 5px;
+}
+
+.title-heart {
+  width: 310px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.city-name {
+  font-size: 18px;
+  color: var(--blue);
+  margin: 0 0 15px 0;
+}
+
+.city-name:hover {
+  color: var(--pink);
+}
+
+.heart:hover {
+  fill: var(--pink)
+}
+
+@media screen and (max-width: 375px) {
+  .card-container {
+    width: 300px;
+    height: 70px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+  }
+  .city-img {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+  }
+  .city-name {
+    margin: 0 0 0 10px;
+  }
+  .heart {
+    margin: 0 20px 0 0;
+  }
+}

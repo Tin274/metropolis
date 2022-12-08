@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-
 import { DataContext } from "../../ContentfulData/ContentfulContext.jsx";
 import { ExtractImageInfo } from "../../../Helper/imageHelper.jsx";
+import './navigation.css';
+
 export default function Navigation() {
     const { images } = useContext(DataContext);
     let urlImgLogoHeader,
@@ -24,28 +25,29 @@ export default function Navigation() {
     }
 
     return (
-        <div>
+        <>
+        <div className="navigation-container">
+            <Link to="/index">
+               <img
+                    className="nav-logo"
+                    src={urlImgLogoHeader}
+                    alt={imgLogoHeaderAtribut}
+            />
+            </Link>
+                <input type="text" className="searchbar" placeholder="Finde deine Metropole" 
+            />
             <ul className="nav-links">
-                <Link to="/index">
-                    <img
-                        src={urlImgLogoHeader}
-                        alt={imgLogoHeaderAtribut}
-                        width="80"
-                    />
-                </Link>
-                <Link to="/index">Home </Link>
-                <input type="text" placeholder="Suche Metropole..." />
-                <Link to="/login">Login </Link>
-                <Link to="/signup">Signup </Link>
+                <Link to="/login" className="link">Login </Link>
+                <Link to="/signup" className="link">Signup </Link>
             </ul>
+            </div>
             <div>
                 <img
+                    className="header-image"
                     src={urlBackgrounImg}
                     alt={backgrounImgAttribut}
-                    width="1000"
-                    height="400"
                 />
             </div>
-        </div>
+        </>
     );
 }
