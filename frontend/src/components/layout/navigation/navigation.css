@@ -7,7 +7,7 @@
   justify-content: center;
 }
 
-.logo {
+.nav-logo {
   height: 100px;
   width: auto;
   align-content: center;
@@ -15,7 +15,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .logo {
+  .nav-logo {
     margin-left: 0;
   }
 }
@@ -28,9 +28,12 @@
 
 @media screen and (max-width: 600px) {
   .navigation-container{
+    display: flex;
     flex-direction: column:
   }
 }
+
+
 
 .searchbar {
   background-color: var(--blue);
@@ -68,7 +71,7 @@
 
 .link {
   text-decoration: none;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   color: var(--blue);
   margin-left: 25px;
@@ -78,10 +81,8 @@
   color: var(--pink);
 }
 
-
-
 .header-image {
   object-fit: cover;
-  height: 400px;
+  height: 500px;
   width: 100%;
 }

@@ -20,7 +20,7 @@ export default function Footer() {
         <div className="footer">
             <Link to="/index">
                 <img
-                    className="logo"
+                    className="footer-logo"
                     src={urlImgLogoFooter}
                     alt={imgLogoFooterAtribut}
                 />

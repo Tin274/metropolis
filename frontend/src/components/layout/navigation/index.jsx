@@ -29,7 +29,7 @@ export default function Navigation() {
         <div className="navigation-container">
             <Link to="/index">
                <img
-                    className="logo"
+                    className="nav-logo"
                     src={urlImgLogoHeader}
                     alt={imgLogoHeaderAtribut}
             />

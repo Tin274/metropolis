@@ -1,16 +1,19 @@
 .footer {
-  height: 80px;
+  height: 100px;
   width: 100%;
   background-color: var(--blue);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   margin-top: 50px;
+  margin-bottom: 0;
   position: relative;
 }
 
-.logo {
+.footer-logo {
   height: 80px;
   width: auto;
 }
