@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-
 import { DataContext } from "../../ContentfulData/ContentfulContext.jsx";
 import { ExtractImageInfo } from "../../../Helper/imageHelper.jsx";
+import './footer.css';
 
 export default function Footer() {
     const { images } = useContext(DataContext);
@@ -17,15 +17,19 @@ export default function Footer() {
     }
 
     return (
-        <div>
+        <div className="footer">
             <Link to="/index">
                 <img
+                    className="logo"
                     src={urlImgLogoFooter}
                     alt={imgLogoFooterAtribut}
-                    width="80"
                 />
             </Link>
-            Footer
+            <ul className="footer-nav">
+                <li>Datenschutz</li>
+                <li>impressum</li>
+                <li>Kontakt</li>
+            </ul>
         </div>
     );
 }
