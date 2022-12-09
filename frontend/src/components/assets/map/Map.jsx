@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
 export default function Map({ stadtName, land, location }) {
     const [center, setCenter] = useState([location.lat, location.lon]);
-    console.log(location.lat);
+   
     // setCenter([location.lat, location.lon]);
 
     return (

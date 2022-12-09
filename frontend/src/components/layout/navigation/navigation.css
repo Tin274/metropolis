@@ -30,6 +30,8 @@
     .navigation-container {
         display: flex;
         flex-direction: column;
+        align-content: center;
+        height: 240px;
     }
 }
 

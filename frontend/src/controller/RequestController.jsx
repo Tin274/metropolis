@@ -37,7 +37,7 @@ export async function signUpRequest(userData) {
     body: JSON.stringify(userData)
 
   })
-
+let userRegister = false;
   console.log("response",response)
   const json = await response.json()
 
@@ -48,7 +48,10 @@ export async function signUpRequest(userData) {
   // storage.logged = true;
 
   //localStorage.setItem("name", JSON.stringify(storage))
-  console.log('User ist registriert')
-  }
+    console.log('User ist registriert')
+     userRegister = true;
+    // return  userRegister
+  } 
+  return userRegister;
 }
 

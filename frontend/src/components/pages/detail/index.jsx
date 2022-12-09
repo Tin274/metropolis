@@ -15,11 +15,10 @@ export default function Detail() {
     const { cardData } = useContext(DataContext);
     const cityParam = useParams();
     const idFromURL = cityParam.id;
-    // console.log("cityParam", cityParam);
-    // console.log("idFromURL", idFromURL);
+
     let selectedCity;
     if (cardData) {
-        // console.log("cardData **Detail : ", cardData);
+
         selectedCity = getCity(cardData, idFromURL);
     }
     let urlImg,
@@ -33,7 +32,6 @@ export default function Detail() {
         location;
 
     if (selectedCity) {
-        console.log("selectedCity", selectedCity);
         urlImg = selectedCity[0].fields.stadtBild.fields.file.url;
         stadtName = selectedCity[0].fields.stadtName;
         land = selectedCity[0].fields.land;

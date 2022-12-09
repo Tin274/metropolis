@@ -20,7 +20,7 @@ export const registerUser = (req,res)=>{
     .create({name: name, email: email, password: password})
     .then(newUser => res.status(200).json(newUser))
     .catch(err => res.status(200).json(err.message))
-
+    res.send('<h1>User is registrated</h1>')
     }
     else {
       res.status(404).json({msg: "email ist schon verwendet"})
