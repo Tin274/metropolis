@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { signUpRequest } from "../../../controller/RequestController";
+import './signup.css'
 
 export default function Signup() {
 
@@ -23,11 +24,14 @@ export default function Signup() {
 
 
   return (
-      <div>
-          <input type="text" name="name" placeholder='Name' onChange={handleChange}/>
-          <input type="email"  name = "email" placeholder='E-mail' onChange={handleChange}/>
-          <input type="password" name= "password" placeholder='Passwort' onChange={handleChange}/>
-          <button onClick={onsubmit}>Signup</button>    
+      <div id="signup">
+          <img></img>
+          <form style={{display:"flex", flexDirection:'column', justifyContent:"center"}}>
+            <input type="text" name="name" placeholder='Name' onChange={handleChange}/>
+            <input type="email"  name = "email" placeholder='E-mail' onChange={handleChange}/>
+            <input type="password" name= "password" placeholder='Passwort' onChange={handleChange}/>
+            <button onClick={onsubmit}>Signup</button>   
+          </form> 
       </div>
   )
 }

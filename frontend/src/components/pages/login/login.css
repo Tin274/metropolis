@@ -1,0 +1,33 @@
+img#bg-image{
+    top:15vh;
+    height:100%;
+    width:100%;
+    z-index:-10;
+    opacity:0.9;
+}
+
+form input{
+    margin:10px;
+    padding:5px;
+}
+
+form button{
+    margin:10px;
+    padding:5px;
+    cursor: pointer;
+}
+form{
+    position:fixed;
+    top:30vh;
+    right:-5vw;
+}
+
+@media screen and (min-width:1000px){
+    form{
+        position:fixed;
+        margin-top:100px;
+        top:70vh;
+        right:40%;
+    }
+
+}

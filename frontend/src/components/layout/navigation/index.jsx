@@ -41,6 +41,7 @@ export default function Navigation() {
             <div>
                 <img
                     src={urlBackgrounImg}
+                    id='bg-image'
                     alt={backgrounImgAttribut}
                     width="1000"
                     height="400"
