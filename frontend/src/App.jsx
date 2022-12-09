@@ -8,6 +8,7 @@ import Home from "./components/pages/start/index.jsx";
 import Userpage from "./components/pages/userpage/index.jsx";
 import Login from "./components/pages/login/index.jsx";
 import Signup from "./components/pages/signup/index.jsx";
+import Detail from "./components/pages/detail/index.jsx";
 
 import ContentfulContext from "./components/ContentfulData/ContentfulContext.jsx";
 
@@ -21,6 +22,7 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/userpage" element={<Userpage />} />
+                    <Route path="/index/:id" element={<Detail />} />
                 </Routes>
                 <Footer />
             </ContentfulContext>
