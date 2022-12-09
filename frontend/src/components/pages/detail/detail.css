@@ -1,0 +1,49 @@
+.detailPage-container {
+    color: var(--blue);
+}
+
+.detailPage-container .city-image {
+    object-fit: cover;
+    height: 600px;
+    width: 100%;
+}
+
+.detailPage-container .content-container {
+    width: 60%;
+    margin: auto;
+}
+
+.detailPage-container .link-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detailPage-container .link-container a {
+    text-decoration: none;
+    font-size: 22px;
+}
+.detailPage-container .link-container a:visited {
+    color: var(--blue);
+}
+.detailPage-container .link-container a:hover {
+    color: var(--pink);
+}
+
+.detailPage-container .fi {
+    width: 65px !important;
+    height: 50px !important;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border: 1px solid var(--light);
+}
+
+.detailPage-container .title-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+}
+
+.detailPage-container .descp {
+    margin-bottom: 70px;
+}
