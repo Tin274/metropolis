@@ -9,6 +9,8 @@ import Userpage from "./components/pages/userpage/index.jsx";
 import Login from "./components/pages/login/index.jsx";
 import Signup from "./components/pages/signup/index.jsx";
 import Detail from "./components/pages/detail/index.jsx";
+import ErrorPage from "./components/pages/errorPage/index.jsx";
+import ScrollToTopButton from "./components/assets/scrollToTop/scrollToTopButton.jsx";
 
 import ContentfulContext from "./components/ContentfulData/ContentfulContext.jsx";
 
@@ -23,7 +25,9 @@ function App() {
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/userpage" element={<Userpage />} />
                     <Route path="/index/:id" element={<Detail />} />
+                    <Route path="*" element={<ErrorPage />} />
                 </Routes>
+                <ScrollToTopButton />
                 <Footer />
             </ContentfulContext>
         </div>
