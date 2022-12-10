@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
@@ -15,11 +15,9 @@ export default function Detail() {
     const { cardData } = useContext(DataContext);
     const cityParam = useParams();
     const idFromURL = cityParam.id;
-    // console.log("cityParam", cityParam);
-    // console.log("idFromURL", idFromURL);
+
     let selectedCity;
     if (cardData) {
-        // console.log("cardData **Detail : ", cardData);
         selectedCity = getCity(cardData, idFromURL);
     }
     let urlImg,
@@ -86,11 +84,15 @@ export default function Detail() {
                     {sehenswert}
                 </p>
                 <div>
-                    <Map
-                        stadtName={stadtName}
-                        land={land}
-                        location={location}
-                    />
+                    {location ? (
+                        <Map
+                            stadtName={stadtName}
+                            land={land}
+                            location={location}
+                        />
+                    ) : (
+                        <p> Map nicht gefunden</p>
+                    )}
                 </div>
             </div>
         </div>
