@@ -6,16 +6,16 @@
   flex-direction: row;
   justify-content: space-between;
 
-  padding-top: 1rem;
+
   padding-bottom: 1rem;
-  margin-top: 50px;
-  margin-bottom: 0;
-  position: relative;
+  margin-bottom: -20px;
+  bottom: 0;
 }
 
 .footer-logo {
   height: 80px;
   width: auto;
+  margin-left: 10vh;
 }
 
 .footer-nav {
@@ -30,7 +30,7 @@ li {
   list-style-type: none;
   text-decoration: none;
   color: #fff;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   padding-left: 3.5em;
   padding-right: 3.5em;
 }
@@ -46,8 +46,6 @@ li {
 @media screen and (max-width: 550px) {
   .footer-nav {
     display: flex;
-    flex-direction: column;
-
-    
+    flex-direction: column;   
   }
 }

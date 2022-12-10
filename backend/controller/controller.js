@@ -19,6 +19,7 @@ export const registerUser = (req, res) => {
                         res.status(200).json({ msg: "user signed up" })
                     )
                     .catch((err) => res.status(200).json(err.message));
+                // res.send("<h1>User is registrated</h1>");
             } else {
                 res.status(404).json({ msg: "email ist schon verwendet" });
             }

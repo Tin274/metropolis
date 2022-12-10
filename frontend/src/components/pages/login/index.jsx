@@ -1,7 +1,17 @@
+<<<<<<< HEAD
 import React, { useContext, useState } from "react";
+=======
+import React, {useContext, useState, useEffect} from 'react';
+>>>>>>> 3220037a3d117e392e1acbe5b329490a36c933c9
 import { loginRequest } from "../../../controller/RequestController";
+
+import { DataContext } from "../../ContentfulData/ContentfulContext.jsx";
+import { ExtractImageInfo } from "../../../Helper/imageHelper.jsx";
+
+import './login.css';
 // import { LoggedStatusContext } from '../../main';
 
+<<<<<<< HEAD
 import { DataContext } from "../../ContentfulData/ContentfulContext.jsx";
 import { ExtractImageInfo } from "../../../Helper/imageHelper.jsx";
 
@@ -15,6 +25,25 @@ export default function Login() {
             urlBackgrounImg = backgrounImgdata.urlImg;
             backgrounImgAttribut = backgrounImgdata.imgAttribut;
         }
+=======
+
+export default function Login() {
+  const { images } = useContext(DataContext);
+
+let urlBackgrounImg,
+    backgrounImgAttribut = "Background Image Not Found";
+if (images) {
+    const backgrounImgdata = ExtractImageInfo(images, "BackgroundImage");
+    if (backgrounImgdata) {
+        urlBackgrounImg = backgrounImgdata.urlImg;
+        backgrounImgAttribut = backgrounImgdata.imgAttribut;
+    }
+}
+
+const userSchema = {
+        email:"",
+        password:""
+>>>>>>> 3220037a3d117e392e1acbe5b329490a36c933c9
     }
     const userSchema = {
         email: "",
@@ -30,6 +59,7 @@ export default function Login() {
         }));
     }
 
+<<<<<<< HEAD
     function onsubmit(e) {
         e.preventDefault();
         loginRequest(user);
@@ -72,4 +102,29 @@ export default function Login() {
             </form>
         </div>
     );
+=======
+function onsubmit(e) {
+    e.preventDefault();
+    loginRequest(user)
+    console.log(user)
+    }
+
+
+// const userStatus = useContext(LoggedStatusContext);
+
+
+
+
+return (
+  <div className='login-image' style={{ backgroundImage: `url(${urlBackgrounImg})`}}>
+    <div className='login-container'>
+      <form>    
+        <input className="input-field" type="text" name="email" placeholder="Deine E-mail" onChange={handleChange}/>
+        <input className="input-field"type="password" name="password" placeholder="Dein Passwort" onChange={handleChange}/>
+        <button className="login-button" onClick={onsubmit} >Login</button>
+      </form>
+    </div>
+  </div>
+)
+>>>>>>> 3220037a3d117e392e1acbe5b329490a36c933c9
 }

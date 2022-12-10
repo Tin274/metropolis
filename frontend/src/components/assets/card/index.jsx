@@ -5,7 +5,6 @@ import { ExtractImageInfo } from "../../../Helper/imageHelper.jsx";
 import "./card.css";
 
 export default function Card({ cardsData }) {
-    console.log("Card Component", cardsData);
     return (
         <div className="card-container">
             <Link to={`/index/${cardsData.stadtName}`} className="city-link">

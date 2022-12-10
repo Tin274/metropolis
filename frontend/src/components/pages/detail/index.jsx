@@ -20,6 +20,7 @@ export default function Detail() {
     if (cardData) {
         selectedCity = getCity(cardData, idFromURL);
     }
+
     let urlImg,
         stadtName,
         classnameFlag,
@@ -31,7 +32,6 @@ export default function Detail() {
         location;
 
     if (selectedCity) {
-        console.log("selectedCity", selectedCity);
         urlImg = selectedCity[0].fields.stadtBild.fields.file.url;
         stadtName = selectedCity[0].fields.stadtName;
         land = selectedCity[0].fields.land;
