@@ -34,41 +34,6 @@ export default function Navigation() {
     const userStatus = useContext(LoggedStatusContext);
     console.log("Navigation :userStatus", userStatus);
 
-    // const data = localStorage.getItem("name");
-    // if (data) {
-    //     const status = JSON.parse(data).logged;
-    //     console.log("::::", status);
-    //     // setIsLogged(status);
-    //     if (status) {
-    //         return (
-    //             <>
-    //                 <div className="navigation-container">
-    //                     <Link to="/index">
-    //                         <img
-    //                             className="nav-logo"
-    //                             src={urlImgLogoHeader}
-    //                             alt={imgLogoHeaderAtribut}
-    //                         />
-    //                     </Link>
-    //                     <input
-    //                         type="text"
-    //                         className="searchbar"
-    //                         placeholder="Finde deine Metropole"
-    //                     />
-    //                     <ul className="nav-links">
-    //                         <Link to="/index" className="link">
-    //                             <button onClick={logoutHandler}> Logout</button>
-    //                         </Link>
-    //                         <Link to="/signup" className="link">
-    //                             Signup
-    //                         </Link>
-    //                     </ul>
-    //                 </div>
-    //             </>
-    //         );
-    //     }
-    // }
-
     return (
         <>
             <div className="navigation-container">
