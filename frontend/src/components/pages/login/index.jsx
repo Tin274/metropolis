@@ -50,7 +50,12 @@ export default function Login() {
         const status = JSON.parse(data).logged;
         console.log("::::", status);
         if (status) {
-            return <h1> Hallo {JSON.parse(data).email}</h1>;
+            return <h2> Hallo {JSON.parse(data).email}</h2>;
+        }
+        if (user === " "){
+            const error = <h1>Please fill out youre email and password</h1>
+            return <h2> Hallo + {error}</h2>;
+
         }
     }
 
@@ -59,22 +64,26 @@ export default function Login() {
     return (
         <div
             className="login-image"
-            style={{ backgroundImage: `url(${urlBackgrounImg})` }}
+            style={{ 
+                height:'100vh',
+                backgroundImage: `url(${urlBackgrounImg})` }}
         >
             <div className="login-container">
-                <form>
+                <form method="post" action="">
                     <input
                         className="input-field"
                         type="text"
                         name="email"
                         placeholder="Deine E-mail"
                         onChange={handleChange}
+                        required
                     />
                     <input
                         className="input-field"
                         type="password"
                         name="password"
                         placeholder="Dein Passwort"
+                        required
                         onChange={handleChange}
                     />
                     <button className="login-button" onClick={onsubmit}>

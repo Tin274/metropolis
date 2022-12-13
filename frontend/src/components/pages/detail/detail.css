@@ -51,3 +51,12 @@
 .detailPage-container {
     margin-bottom: 56px;
 }
+
+.title-container button{
+    background-color: transparent;
+    border:0px;
+
+}
+.title-container button.bg-pink{
+    background-color: blueviolet;
+}
