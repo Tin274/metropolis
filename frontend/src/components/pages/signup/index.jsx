@@ -26,7 +26,7 @@ export default function Signup() {
         email: "",
         password: "",
     };
-
+    const [user, setUser] = useState(userSchema);
     function handleChange(event) {
         setUser((prev) => ({
             ...prev,
