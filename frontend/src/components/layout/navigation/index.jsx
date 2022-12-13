@@ -37,13 +37,15 @@ export default function Navigation() {
     return (
         <>
             <div className="navigation-container">
-                <Link to="/index">
-                    <img
-                        className="nav-logo"
-                        src={urlImgLogoHeader}
-                        alt={imgLogoHeaderAtribut}
-                    />
-                </Link>
+                <div className="navigation-container__logo-container">
+                    <Link to="/index">
+                        <img
+                            className="nav-logo"
+                            src={urlImgLogoHeader}
+                            alt={imgLogoHeaderAtribut}
+                        />
+                    </Link>
+                </div>
                 <input
                     type="text"
                     className="searchbar"

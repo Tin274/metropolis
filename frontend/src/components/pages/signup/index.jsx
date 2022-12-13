@@ -58,10 +58,12 @@ export default function Signup() {
     return (
         <div
             className="signup-image"
-            style={{ backgroundImage: `url(${urlBackgrounImg})` }}
+            style={{ 
+                height:'100vh',
+                backgroundImage: `url(${urlBackgrounImg})` }}
         >
             <div className="signup-container">
-                <form>
+                <form method="post">
                     <input
                         className="input-field"
                         type="text"

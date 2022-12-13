@@ -63,6 +63,7 @@ export const updateUser = async (req, res) => {
 export const loginUser = (req, res) => {
     const { email, password } = req.body;
 
+
     // console.log(`email: ${email} und password: ${password}`)
     User.findOne({ email: email }, async (err, user) => {
         if (err) {
@@ -85,6 +86,7 @@ export const loginUser = (req, res) => {
                 console.log("username ist falsch");
                 res.status(200).json({ msg: "username ist falsch" });
             }
+
         }
 
         //  console.log(user)

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
@@ -15,6 +15,9 @@ export default function Detail() {
     const { cardData } = useContext(DataContext);
     const cityParam = useParams();
     const idFromURL = cityParam.id;
+    const [isActive, setIsActive] = useState(false);
+
+
 
     let selectedCity;
     if (cardData) {
@@ -46,6 +49,12 @@ export default function Detail() {
         location = selectedCity[0].fields.location;
     }
 
+   const handleClick = (event) =>{
+
+        setIsActive(current => !current);
+    };
+
+
     return (
         <div className="detailPage-container">
             <img className="city-image " src={urlImg} alt={stadtName} />
@@ -65,8 +74,13 @@ export default function Detail() {
                 <div className="title-container">
                     <h1>
                         {stadtName}, {land}
-                    </h1>
-                    <HeartIcon />
+                    </h1> 
+                    <button 
+                    className={isActive ? 'bg-pink' : ''} 
+                    onClick={handleClick} >
+                    <HeartIcon className={isActive ? 'bg-pink' : ''} 
+                    onClick={handleClick} ></HeartIcon>
+                    </button>
                 </div>
                 <div className="descp">
                     {documentToReactComponents(stadtBeschreibung)}
