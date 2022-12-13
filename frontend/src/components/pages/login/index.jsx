@@ -48,9 +48,9 @@ export default function Login() {
     if (data) {
         const status = JSON.parse(data).logged;
         console.log("::::", status);
-        if (status) {
-            return <h2> Hallo {JSON.parse(data).email}</h2>;
-        }
+        // if (status) {
+        //     return <h2> Hallo {JSON.parse(data).email}</h2>;
+        // }
         if (user === " ") {
             const error = <h1>Please fill out youre email and password</h1>;
             return <h2> Hallo + {error}</h2>;

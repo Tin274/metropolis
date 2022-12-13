@@ -55,7 +55,7 @@ export default function Navigation() {
                     {userStatus ? (
                         <>
                             <Link
-                                to="/index"
+                                to="/signup"
                                 className="link"
                                 onClick={logoutHandler}
                             >
