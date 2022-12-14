@@ -7,6 +7,7 @@ import { LoggedStatusContext } from "../../../main.jsx";
 
 import "./login.css";
 import Home from "../start/index.jsx";
+import { Link } from "react-router-dom";
 
 export default function Login() {
     // für background Image
@@ -36,12 +37,14 @@ export default function Login() {
             [event.target.name]: event.target.value,
         }));
     }
-
-    function onsubmit(e) {
+    const userIsLogged = useContext(LoggedStatusContext);
+    async function onsubmit(e) {
         e.preventDefault();
-        loginRequest(user);
+        await loginRequest(user);
 
-        console.log(user);
+        console.log("Login Onsubmit: userStatus", userIsLogged);
+        console.log("Onsubmit :user", user);
+        window.location.reload();
     }
 
     const data = localStorage.getItem("name");
@@ -57,20 +60,22 @@ export default function Login() {
         }
     }
 
-    const userIsLogged = useContext(LoggedStatusContext);
     console.log("Login: userStatus", userIsLogged);
 
     return (
         <div>
             {userIsLogged ? (
-                <Home />
+                <section>
+                    {/* <h1> Sie sind eingeloggt</h1> */}
+                    <Home />
+                </section>
             ) : (
                 <div
                     className="login-image"
                     style={{ backgroundImage: `url(${urlBackgrounImg})` }}
                 >
                     <div className="login-container">
-                        <form>
+                        <form onSubmit={onsubmit}>
                             <input
                                 className="input-field"
                                 type="text"
@@ -85,9 +90,7 @@ export default function Login() {
                                 placeholder="Dein Passwort"
                                 onChange={handleChange}
                             />
-                            <button className="login-button" onClick={onsubmit}>
-                                Login
-                            </button>
+                            <button className="login-button">Login</button>
                         </form>
                     </div>
                 </div>

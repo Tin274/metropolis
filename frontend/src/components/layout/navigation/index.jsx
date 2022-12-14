@@ -32,7 +32,6 @@ export default function Navigation() {
     }
 
     const userStatus = useContext(LoggedStatusContext);
-    console.log("Navigation :userStatus", userStatus);
 
     return (
         <>

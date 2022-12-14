@@ -17,7 +17,7 @@ export async function loginRequest(userData) {
 
     //user Daten in localStorge speichern
     if (json.msg === "user logged in") {
-        const storage = userData;
+        const storage = { email: userData.email };
         storage.logged = true;
 
         localStorage.setItem("name", JSON.stringify(storage));
